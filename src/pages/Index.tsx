@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PiggyBank, TrendingUp, Award, BadgeDollarSign } from "lucide-react";
+import { SavingsChart } from "@/components/dashboard/SavingsChart";
 
 const Index = () => {
   return (
@@ -46,6 +47,10 @@ const Index = () => {
             <div className="text-2xl font-bold">0 DAI</div>
           </CardContent>
         </Card>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <SavingsChart />
       </div>
     </div>
   );
