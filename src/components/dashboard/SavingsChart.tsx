@@ -59,9 +59,7 @@ export function SavingsChart() {
                 fillOpacity={1}
                 fill="url(#deposits)"
               />
-              <ChartTooltip>
-                <ChartTooltipContent />
-              </ChartTooltip>
+              <ChartTooltip content={<ChartTooltipContent />} />
             </AreaChart>
           </ChartContainer>
         </div>

@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export function Header() {
   const { toast } = useToast();
+  const { theme, setTheme } = useTheme();
 
   const connectWallet = async () => {
     try {
@@ -29,13 +32,31 @@ export function Header() {
     }
   };
 
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
     <header className="border-b p-4">
       <div className="flex justify-between items-center">
         <h2 className="text-lg font-semibold">Welcome to AsterFinance</h2>
-        <Button onClick={connectWallet} variant="outline">
-          Connect Wallet
-        </Button>
+        <div className="flex items-center gap-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+            className="rounded-full"
+          >
+            {theme === "dark" ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
+          </Button>
+          <Button onClick={connectWallet} variant="outline">
+            Connect Wallet
+          </Button>
+        </div>
       </div>
     </header>
   );
