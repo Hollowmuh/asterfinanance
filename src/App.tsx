@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "./components/layout/Layout";
 import Index from "./pages/Index";
 import Deposit from "./pages/Deposit";
+import Landing from "./pages/Landing";
 
 const queryClient = new QueryClient();
 
@@ -15,12 +16,16 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Index />} />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route element={<Layout />}>
+            <Route path="/dashboard" element={<Index />} />
             <Route path="/deposit" element={<Deposit />} />
-          </Routes>
-        </Layout>
+            <Route path="/partners/*" element={<Layout />}>
+              <Route index element={<div>Partners Dashboard</div>} />
+            </Route>
+          </Route>
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

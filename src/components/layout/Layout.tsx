@@ -2,8 +2,9 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { ThemeProvider } from "next-themes";
 import { AppSidebar } from "./Sidebar";
 import { Header } from "./Header";
+import { Outlet } from "react-router-dom";
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout() {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <SidebarProvider>
@@ -12,7 +13,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex-1 flex flex-col">
             <Header />
             <main className="flex-1 p-6 animate-fade-in">
-              {children}
+              <Outlet />
             </main>
           </div>
         </div>
