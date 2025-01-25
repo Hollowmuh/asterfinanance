@@ -12,10 +12,10 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const menuItems = [
-  { title: "Dashboard", icon: Home, path: "/" },
+  { title: "Dashboard", icon: Home, path: "/dashboard" },
   { title: "Deposit", icon: PiggyBank, path: "/deposit" },
-  { title: "Partners", icon: Users, path: "/admin/partners" },
-  { title: "Settings", icon: Settings, path: "/admin/settings" },
+  { title: "Partners", icon: Users, path: "/partners" },
+  { title: "Settings", icon: Settings, path: "/settings" },
 ];
 
 export function AppSidebar() {

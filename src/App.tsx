@@ -2,11 +2,12 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Layout } from "./components/layout/Layout";
 import Index from "./pages/Index";
 import Deposit from "./pages/Deposit";
 import Landing from "./pages/Landing";
+import PartnerDashboard from "./pages/PartnerDashboard";
 
 const queryClient = new QueryClient();
 
@@ -21,9 +22,7 @@ const App = () => (
           <Route element={<Layout />}>
             <Route path="/dashboard" element={<Index />} />
             <Route path="/deposit" element={<Deposit />} />
-            <Route path="/partners/*" element={<Layout />}>
-              <Route index element={<div>Partners Dashboard</div>} />
-            </Route>
+            <Route path="/partners" element={<PartnerDashboard />} />
           </Route>
         </Routes>
       </BrowserRouter>
