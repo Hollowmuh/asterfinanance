@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Deposit from "./pages/Deposit";
 import Landing from "./pages/Landing";
 import PartnerDashboard from "./pages/PartnerDashboard";
+import Settings from "./pages/Settings";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
             <Route path="/dashboard" element={<Index />} />
             <Route path="/deposit" element={<Deposit />} />
             <Route path="/partners" element={<PartnerDashboard />} />
+            <Route path="/settings" element={<Settings />} />
           </Route>
         </Routes>
       </BrowserRouter>
