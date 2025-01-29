@@ -13,12 +13,12 @@ import { useNavigate } from "react-router-dom";
 
 const menuItems = [
   { title: "Dashboard", icon: Home, path: "/user/dashboard" },
-  { title: "Deposit", icon: PiggyBank, path: "user/deposit" },
-  { title: "Partners", icon: Users, path: "/user/partner-List" },
+  { title: "Deposit", icon: PiggyBank, path: "/user/deposit" },
+  { title: "Partners", icon: Users, path: "/user/partner-list" },
   { title: "Settings", icon: Settings, path: "/user/settings" },
 ];
 
-export function AppSidebar() {
+export function UserSidebar() {
   const navigate = useNavigate();
 
   return (

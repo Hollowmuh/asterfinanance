@@ -8,7 +8,6 @@ const PartnerDashboard = () => {
       <h1 className="text-3xl font-bold">Partner Dashboard</h1>
       <PartnerStats />
       <InvestmentChart />
-      <UserMatchList />
     </div>
   );
 };
